@@ -50,7 +50,7 @@ router.put('/:id',middleWrite,function(req,res,next){
     }));
     if (req.params.id == 'all'){
         var conditions = {}, update =( {$set: _setObj}), options = { multi: true };
-        return User.update(conditions, update, options, callback);
+        return Team.update(conditions, update, options, callback);
         function callback (err) {
             if(err) return res.status(500).json({message: 'Errore'});
             else return res.json({message : "Editate tutte le squadre"})
